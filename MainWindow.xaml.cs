@@ -88,6 +88,17 @@ namespace dspatch_gui
             Window1 credits = new Window1();
             credits.Show();
         }
+        private void bar_HaxxStation_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 name = new Window2();
+            name.Show();
+        }
+
+        private void bar_HaxxStationBanner_Click(object sneder, RoutedEventArgs e)
+        {
+            Window3 banner = new Window3();
+            banner.Show();
+        }
 
         private void downloadStationROMOpen_Click(object sender, RoutedEventArgs e)
         {

@@ -11,6 +11,10 @@ namespace dspatch
 {
     public class DownloadStationPatcher
     {
+        public static String title = "HaxxStation";
+        public static String subTitle1 = "By Gericom";
+        public static String subTitle2 = ", shutterbug2000";
+        public static String subTitle3 = "and Apache Thunder";
         private static byte[] haxxStationIconImage =
         {
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -65,7 +69,7 @@ namespace dspatch
             0x10, 0x42, 0x51, 0x46, 0x94, 0x52, 0x35, 0x23
         };
 
-        private static byte[] haxxStationServer =
+        public static byte[] haxxStationServer =
         {
             0x52, 0x43, 0x31, 0x20, 0x32, 0x30, 0x30, 0x36, 0x20, 0x30, 0x31, 0x20,
             0x32, 0x35, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -147,7 +151,7 @@ namespace dspatch
             mDownloadStation.Banner.Banner.Image = haxxStationIconImage;
             mDownloadStation.Banner.Banner.Pltt = haxxStationIconPltt;
             for (int i = 0; i < 6; i++)
-                mDownloadStation.Banner.Banner.GameName[i] = "HaxxStation\nBy Gericom, shutterbug2000\nand Apache Thunder";
+                mDownloadStation.Banner.Banner.GameName[i] = title + "\n" + subTitle1 + ", " + subTitle2 + "\n" + subTitle3;
 
             mDemoMenu = new DemoMenu();
         }
@@ -221,8 +225,8 @@ namespace dspatch
             {
                 rating = 1,
                 guideMode = 0x15,
-                touchText1 = "HaxxStation by Gericom,",
-                touchText2 = "shutterbug2000, Apache Thunder",
+                touchText1 = title + " " + subTitle1,
+                touchText2 = subTitle2 + subTitle3,
                 internalName = fileName
             };
             if (rom.Banner != null)
@@ -265,8 +269,8 @@ namespace dspatch
                     bannerText2 = "",
                     rating = 1,
                     guideMode = 0x15,
-                    touchText1 = "HaxxStation by Gericom,",
-                    touchText2 = "shutterbug2000, Apache Thunder",
+                    touchText1 = title + " " + subTitle1,
+                    touchText2 = subTitle2 + subTitle3,
                     internalName = fileName
                 });
             }
@@ -274,5 +278,22 @@ namespace dspatch
             mDownloadStation.FromFileSystem(mFileSystem);
             return mDownloadStation;
         }
+        public static void HaxxStationServerName(Byte[] name)
+        {
+            haxxStationServer = name;
+        }
+        public static void HaxxStationServerName(String name)
+        {
+            byte[] nameByte = Encoding.ASCII.GetBytes(name);
+            haxxStationServer = nameByte;
+        }
+        public static void HaxxStationBanner(String _var1, String _var2, String _var3, String _var4)
+        {
+            title = _var1;
+            subTitle1 = _var2;
+            subTitle2 = _var3;
+            subTitle3 = _var4;
+        }
     }
+
 }
