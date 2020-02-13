@@ -15,6 +15,10 @@ namespace dspatch
         public static String subTitle1 = "By Gericom";
         public static String subTitle2 = ", shutterbug2000";
         public static String subTitle3 = "and Apache Thunder";
+        public static String cat = "HaxxStation";
+        public static String cat1 = "By Gericom";
+        public static String cat2 = "shutterbug2000";
+        public static String cat3 = "and Apache Thunder";
         private static byte[] haxxStationIconImage =
         {
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -62,7 +66,7 @@ namespace dspatch
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
         };
 
-        private static byte[] haxxStationIconPltt =
+        public static byte[] haxxStationIconPltt =
         {
             0x1F, 0x7C, 0x42, 0x04, 0x83, 0x0C, 0xC5, 0x08, 0xC6, 0x18, 0xE7, 0x1C,
             0x00, 0x00, 0x29, 0x25, 0x8C, 0x2D, 0xAD, 0x35, 0xCE, 0x39, 0x0F, 0x3E,
@@ -225,8 +229,8 @@ namespace dspatch
             {
                 rating = 1,
                 guideMode = 0x15,
-                touchText1 = title + " " + subTitle1,
-                touchText2 = subTitle2 + subTitle3,
+                touchText1 = cat + " " + cat1,
+                touchText2 = cat2 + cat3,
                 internalName = fileName
             };
             if (rom.Banner != null)
@@ -269,8 +273,8 @@ namespace dspatch
                     bannerText2 = "",
                     rating = 1,
                     guideMode = 0x15,
-                    touchText1 = title + " " + subTitle1,
-                    touchText2 = subTitle2 + subTitle3,
+                    touchText1 = cat + " " + cat1,
+                    touchText2 = cat2 + cat3,
                     internalName = fileName
                 });
             }
@@ -293,6 +297,23 @@ namespace dspatch
             subTitle1 = _var2;
             subTitle2 = _var3;
             subTitle3 = _var4;
+        }
+        public static void HaxxStationCat(String _var1, String _var2, String _var3, String _var4)
+        {
+            cat = _var1;
+            cat1 = _var2;
+            cat2 = _var3;
+            cat3 = _var4;
+        }
+        public static void HaxxStationBannerColor(String color)
+        {
+            byte[] colorByte = Encoding.ASCII.GetBytes(color);
+            haxxStationIconPltt = colorByte;
+        }
+
+        public static void HaxxStationBannerColor(Byte[] color)
+        {
+            haxxStationIconPltt = color;
         }
     }
 
