@@ -20,7 +20,7 @@
             <Menu>
                 <MenuItem x:Name="haxxStationName" Header="Name" Click="bar_HaxxStation_Click" Background="#FFF0F0F0" Margin="0"/>
                 <MenuItem x:Name="haxxStationBanner" Header="Banner" Click="bar_HaxxStationBanner_Click" Background="#FFF0F0F0" Margin="0"/>
-                <MenuItem x:Name="haxxStationTopScreen" Header="Top" Click="bar_HaxxStationBanner_Click" Background="#FFF0F0F0" Margin="0"/>
+                <MenuItem x:Name="haxxStationTopScreen" Header="Top" Click="bar_HaxxStationTopScreen_Click" Background="#FFF0F0F0" Margin="0"/>
                 <MenuItem x:Name="bar_Credits" Header="Credits" Click="bar_Credits_Click" Background="#FFF0F0F0"></MenuItem>
                 <MenuItem x:Name="bar_Quit" Header="Quit" Click="bar_Quit_Click" Margin="0" RenderTransformOrigin="1.484,0.726"/>
             </Menu>
