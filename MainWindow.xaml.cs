@@ -73,6 +73,11 @@ namespace dspatch_gui
                 MessageBox.Show("You did not add any ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
+            if (romListBox.Items.Count > 8)
+            {
+                MessageBox.Show("You added too many ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
             byte[] dsdata = File.ReadAllBytes(downloadStationTextBox.Text);
             DownloadStationPatcher p = new DownloadStationPatcher(new NDS(dsdata));
             foreach(var r in romListBox.Items)

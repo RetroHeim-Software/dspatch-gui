@@ -16,7 +16,7 @@ using dspatch;
 namespace dspatch_gui
 {
     /// <summary>
-    /// Interaction logic for Window3.xaml
+    /// Interaction logic for Window4.xaml
     /// </summary>
     public partial class Window4 : Window
     {
