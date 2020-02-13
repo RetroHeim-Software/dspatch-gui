@@ -19,10 +19,12 @@
         </Grid.ColumnDefinitions>
         <ToolBar VerticalAlignment="Top" Grid.ColumnSpan="4" Height="28">
             <Menu>
+                <MenuItem x:Name="haxxStationName" Header="Name" Click="bar_HaxxStation_Click" Background="#FFF0F0F0" Margin="0"/>
+                <MenuItem x:Name="haxxStationBanner" Header="Banner" Click="bar_HaxxStationBanner_Click" Background="#FFF0F0F0" Margin="0"/>
+                <MenuItem x:Name="haxxStationTopScreen" Header="Top" Click="bar_HaxxStationBanner_Click" Background="#FFF0F0F0" Margin="0"/>
                 <MenuItem x:Name="bar_Credits" Header="Credits" Click="bar_Credits_Click" Background="#FFF0F0F0"></MenuItem>
                 <MenuItem x:Name="bar_Quit" Header="Quit" Click="bar_Quit_Click" Margin="0" RenderTransformOrigin="1.484,0.726"/>
             </Menu>
-            <MenuItem x:Name="haxxStationName" Header="Name" Click="bar_HaxxStation_Click" Background="#FFF0F0F0" Margin="0,-2,0,-1"/>
         </ToolBar>
         <TextBox x:Name="downloadStationTextBox" Margin="10,106,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="18"/>
         <Label x:Name="label" Content="DS Download Station Volume 1" HorizontalAlignment="Center" Margin="58,60,53,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="26" Width="176"/>
@@ -35,6 +37,5 @@
         <Label x:Name="label2" Content="ROMs to Add" Grid.Column="3" HorizontalAlignment="Center" Margin="102,33,102,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,0.407" Height="26" Width="82"/>
         <ListBox x:Name="romListBox" Grid.Column="3" HorizontalAlignment="Center" Height="167" Margin="67,60,67,0" VerticalAlignment="Top" Width="152" Grid.RowSpan="2"/>
         <Button x:Name="addROMButton" Content="Add ROM" Grid.Column="3" HorizontalAlignment="Center" Margin="106,89,106,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Click="addROMButton_Click" Height="20"/>
-        <MenuItem x:Name="haxxStationBanner" Header="Banner" Click="bar_HaxxStationBanner_Click" Background="#FFF0F0F0" Margin="10,0,0,160" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="124"/>
     </Grid>
 </Window>

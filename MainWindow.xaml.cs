@@ -100,6 +100,12 @@ namespace dspatch_gui
             banner.Show();
         }
 
+        private void bar_HaxxStationTopScreen_Click(object sneder, RoutedEventArgs e)
+        {
+            Window4 top = new Window4();
+            top.Show();
+        }
+
         private void downloadStationROMOpen_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();

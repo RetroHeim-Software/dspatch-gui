@@ -298,7 +298,7 @@ namespace dspatch
             subTitle2 = _var3;
             subTitle3 = _var4;
         }
-        public static void HaxxStationCat(String _var1, String _var2, String _var3, String _var4)
+        public static void HaxxStationTop(String _var1, String _var2, String _var3, String _var4)
         {
             cat = _var1;
             cat1 = _var2;
