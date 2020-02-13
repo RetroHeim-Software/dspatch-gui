@@ -13,12 +13,10 @@
         </Grid.ColumnDefinitions>
         <Canvas Grid.ColumnSpan="2" Margin="33,6,23,10">
             <Canvas Height="130" Width="298">
-                <Label x:Name="label" Content="HaxxStation Top Screen" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="138" RenderTransformOrigin="0.481,2.88" Canvas.Left="80"/>
-                <TextBox x:Name="haxxStationTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="HaxxStation" Canvas.Top="35" Width="112"/>
-                <TextBox x:Name="haxxStationTextBox2" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="By Gericom" Canvas.Left="179" Canvas.Top="35" Width="119"/>
-                <TextBox x:Name="haxxStationTextBox3" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="shutterbug2000" Canvas.Top="67" Width="112"/>
-                <TextBox x:Name="haxxStationTextBox4" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="and Apache Thunder" Canvas.Left="179" Canvas.Top="67" Width="119"/>
-                <Button x:Name="haxxStationTopSave" Content="Save Top" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Click="HaxxStationTopSave_click" Height="20" Canvas.Left="112" Canvas.Top="110"/>
+                <Label x:Name="label" Content="HaxxStation Top Screen" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="138" RenderTransformOrigin="0.481,2.88" Canvas.Left="78" Canvas.Top="-1"/>
+                <TextBox x:Name="haxxStationTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="HaxxStation by Gericom," Canvas.Top="38" Width="192" MaxLength="23" Canvas.Left="51"/>
+                <TextBox x:Name="haxxStationTextBox2" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="shutterbug2000, Apache Thunder" Canvas.Left="51" Canvas.Top="85" Width="192" MaxLength="30"/>
+                <Button x:Name="haxxStationTopSave" Content="Save Top" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Click="HaxxStationTopSave_click" Height="20" Canvas.Left="110" Canvas.Top="109"/>
             </Canvas>
             <Button x:Name="button" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Height="20" Click="button_Click" Canvas.Left="112" Canvas.Top="135"/>
         </Canvas>

@@ -37,7 +37,7 @@
             <Button x:Name="saveButton" Content="Save File" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76" Click="saveButton_Click" Height="20" Canvas.Left="92" Canvas.Top="75"/>
         </Canvas>
         <Canvas Grid.Column="2" Margin="116,60,85,83" Grid.RowSpan="2">
-            <ListBox x:Name="romListBox" HorizontalAlignment="Center" Height="167" VerticalAlignment="Top" Width="142" BorderThickness="2" RenderTransformOrigin="1.038,1.102" Canvas.Top="41"/>
+            <ListBox x:Name="romListBox" HorizontalAlignment="Center" Height="167" VerticalAlignment="Top" Width="142" BorderThickness="2" RenderTransformOrigin="1.038,1.102" Canvas.Top="41" />
             <Label x:Name="label3" Content="ROMs to be Added" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="142" HorizontalContentAlignment="Center"/>
             <Button x:Name="addROMButton" Content="Add ROM" HorizontalAlignment="Center" Width="86" Click="addROMButton_Click" Height="22" FontSize="11" Canvas.Left="28" Canvas.Top="223"/>
         </Canvas>

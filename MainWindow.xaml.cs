@@ -73,7 +73,7 @@ namespace dspatch_gui
                 MessageBox.Show("You did not add any ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (romListBox.Items.Count > 8)
+            if (romListBox.Items.Count > 3)
             {
                 MessageBox.Show("You added too many ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -152,11 +152,18 @@ namespace dspatch_gui
 
         private void addROMButton_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "All Usable Files (*.nds;*.srl)|*.nds;*.srl";
-            if (open.ShowDialog() == true)
+            if (romListBox.Items.Count >= 3)
             {
-                romListBox.Items.Add(open.FileName);
+                MessageBox.Show("You cannot add more than 3 ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "All Usable Files (*.nds;*.srl)|*.nds;*.srl";
+                if (open.ShowDialog() == true)
+                {
+                    romListBox.Items.Add(open.FileName);
+                }
             }
         }
 
@@ -167,5 +174,6 @@ namespace dspatch_gui
                 MessageBox.Show("Patched ROM successfully saved to " + outputTextBox.Text + "!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
     }
 }
