@@ -5,21 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dspatch_gui"
         mc:Ignorable="d"
-        Title="HaxxStation Banner Editor" Height="200" Width="360" Background="#FFF4F4F4" ResizeMode="NoResize">
+        Title="HaxxStation Banner" Height="200" Width="360" Background="#FFF4F4F4" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="65*"/>
             <ColumnDefinition Width="289*"/>
         </Grid.ColumnDefinitions>
-        <Canvas Grid.ColumnSpan="2" Margin="33,10,23,10">
-            <Button x:Name="button" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Height="20" Click="button_Click" Canvas.Left="107" Canvas.Top="131"/>
-            <Canvas Height="120" Width="298">
-                <TextBox x:Name="haxxStationTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="HaxxStation" Canvas.Top="28" Width="119" MaxLength="12" Canvas.Left="84"/>
-                <Label x:Name="label_Copy" Content="HaxxStation Internal Banner" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="159" RenderTransformOrigin="0.481,2.884" Canvas.Left="64"/>
-                <Button x:Name="haxxStationBannerSave" Content="Save Banner" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76" Click="HaxxStationBannerSave_click" Height="20" Canvas.Left="106" Canvas.Top="100"/>
-                <TextBox x:Name="haxxStationTextBox2" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="By Gericom, shutterbug2000" Canvas.Left="60" Canvas.Top="52" Width="167" MaxLength="26"/>
-                <TextBox x:Name="haxxStationTextBox3" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="and Apache Thunder" Canvas.Left="84" Canvas.Top="76" Width="119" MaxLength="18"/>
-            </Canvas>
-        </Canvas>
+        <Button x:Name="button" Content="Close" HorizontalAlignment="Center" Margin="75,141,140,0" VerticalAlignment="Top" Width="74" Height="20" Click="button_Click" Grid.Column="1"/>
+        <TextBox x:Name="haxxStationTextBox" Margin="33,35,209,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="HaxxStation" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy" Content="HaxxStation Internal Banner" HorizontalAlignment="Center" Margin="32,10,97,0" VerticalAlignment="Top" Height="25" Width="160" RenderTransformOrigin="0.481,2.884" Grid.Column="1"/>
+        <Button x:Name="haxxStationBannerSave" Content="Save Banner" HorizontalAlignment="Center" Margin="75,110,138,0" VerticalAlignment="Top" Width="76" Click="HaxxStationBannerSave_click" Height="20" Grid.Column="1"/>
+        <TextBox x:Name="haxxStationTextBox2" Margin="147,35,30,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Grid.Column="1" Text="By Gericom"/>
+        <TextBox x:Name="haxxStationTextBox3" Margin="33,67,209,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text=", shutterbug2000" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="haxxStationTextBox4" Margin="147,67,30,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Grid.Column="1" Text="and Apache Thunder"/>
     </Grid>
 </Window>

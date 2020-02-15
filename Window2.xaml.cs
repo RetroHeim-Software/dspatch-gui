@@ -32,22 +32,14 @@ namespace dspatch_gui
         }
         private void haxxStationhaxxStationNameSave_click(object sender, RoutedEventArgs e)
         {
-            if (haxxStationTextBox.Equals("RC1 2006 01 25                  Gericom   HaxxStation                                                                                     By Gericom, shutterbug2000                                                                      and Apache Thunder          .                                                                   "))
+            if (haxxStationTextBox.Equals(""))
             {
                 DownloadStationPatcher.HaxxStationServerName(DownloadStationPatcher.haxxStationServer);
             }
             else
             {
-                byte[] test = DownloadStationPatcher.haxxStationServer;
+
                 DownloadStationPatcher.HaxxStationServerName(haxxStationTextBox.Text);
-                if (!DownloadStationPatcher.haxxStationServer.Equals(test))
-                {
-                    MessageBox.Show("You have successfully changed the internal name!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Something went wrong with changing the internal name!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
             }
         }
     }
