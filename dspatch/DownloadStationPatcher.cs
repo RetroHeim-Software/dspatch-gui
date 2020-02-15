@@ -12,13 +12,12 @@ namespace dspatch
     public class DownloadStationPatcher
     {
         public static String title = "HaxxStation";
-        public static String subTitle1 = "By Gericom";
-        public static String subTitle2 = ", shutterbug2000";
-        public static String subTitle3 = "and Apache Thunder";
-        public static String cat = "HaxxStation";
-        public static String cat1 = "By Gericom";
-        public static String cat2 = "shutterbug2000";
-        public static String cat3 = "and Apache Thunder";
+        public static String subTitle1 = "By Gericom, shutterbug2000";
+        public static String subTitle2 = "and Apache Thunder";
+        public static String cat = "HaxxStation by Gericom,";
+        public static String cat1 = "shutterbug2000, Apache Thunder";
+        public String cat0 = cat;
+        public String cat01 = cat1;
         private static byte[] haxxStationIconImage =
         {
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -154,8 +153,9 @@ namespace dspatch
             //change banner
             mDownloadStation.Banner.Banner.Image = haxxStationIconImage;
             mDownloadStation.Banner.Banner.Pltt = haxxStationIconPltt;
+            String banner = title + "\n" + subTitle1 + "\n" + subTitle2;
             for (int i = 0; i < 6; i++)
-                mDownloadStation.Banner.Banner.GameName[i] = title + "\n" + subTitle1 + ", " + subTitle2 + "\n" + subTitle3;
+                mDownloadStation.Banner.Banner.GameName[i] = banner;
 
             mDemoMenu = new DemoMenu();
         }
@@ -229,8 +229,8 @@ namespace dspatch
             {
                 rating = 1,
                 guideMode = 0x15,
-                touchText1 = cat + " " + cat1,
-                touchText2 = cat2 + cat3,
+                touchText1 = cat0,
+                touchText2 = cat01,
                 internalName = fileName
             };
             if (rom.Banner != null)
@@ -273,8 +273,8 @@ namespace dspatch
                     bannerText2 = "",
                     rating = 1,
                     guideMode = 0x15,
-                    touchText1 = cat + " " + cat1,
-                    touchText2 = cat2 + cat3,
+                    touchText1 = cat0,
+                    touchText2 = cat01,
                     internalName = fileName
                 });
             }
@@ -291,19 +291,16 @@ namespace dspatch
             byte[] nameByte = Encoding.ASCII.GetBytes(name);
             haxxStationServer = nameByte;
         }
-        public static void HaxxStationBanner(String _var1, String _var2, String _var3, String _var4)
+        public static void HaxxStationBanner(String _var1, String _var2, String _var3)
         {
             title = _var1;
             subTitle1 = _var2;
             subTitle2 = _var3;
-            subTitle3 = _var4;
         }
-        public static void HaxxStationCat(String _var1, String _var2, String _var3, String _var4)
+        public static void HaxxStationTop(String _var1, String _var2)
         {
             cat = _var1;
             cat1 = _var2;
-            cat2 = _var3;
-            cat3 = _var4;
         }
         public static void HaxxStationBannerColor(String color)
         {

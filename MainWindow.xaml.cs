@@ -73,6 +73,11 @@ namespace dspatch_gui
                 MessageBox.Show("You did not add any ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
+            if (romListBox.Items.Count > 3)
+            {
+                MessageBox.Show("You added too many ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
             byte[] dsdata = File.ReadAllBytes(downloadStationTextBox.Text);
             DownloadStationPatcher p = new DownloadStationPatcher(new NDS(dsdata));
             foreach(var r in romListBox.Items)
@@ -98,6 +103,12 @@ namespace dspatch_gui
         {
             Window3 banner = new Window3();
             banner.Show();
+        }
+
+        private void bar_HaxxStationTopScreen_Click(object sneder, RoutedEventArgs e)
+        {
+            Window4 top = new Window4();
+            top.Show();
         }
 
         private void downloadStationROMOpen_Click(object sender, RoutedEventArgs e)
@@ -141,11 +152,18 @@ namespace dspatch_gui
 
         private void addROMButton_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "All Usable Files (*.nds;*.srl)|*.nds;*.srl";
-            if (open.ShowDialog() == true)
+            if (romListBox.Items.Count >= 3)
             {
-                romListBox.Items.Add(open.FileName);
+                MessageBox.Show("You cannot add more than 3 ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "All Usable Files (*.nds;*.srl)|*.nds;*.srl";
+                if (open.ShowDialog() == true)
+                {
+                    romListBox.Items.Add(open.FileName);
+                }
             }
         }
 
@@ -156,5 +174,6 @@ namespace dspatch_gui
                 MessageBox.Show("Patched ROM successfully saved to " + outputTextBox.Text + "!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
     }
 }
