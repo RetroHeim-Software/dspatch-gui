@@ -73,7 +73,7 @@ namespace dspatch_gui
                 MessageBox.Show("You did not add any ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (romListBox.Items.Count > 3)
+            if (romListBox.Items.Count > 8)
             {
                 MessageBox.Show("You added too many ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -152,9 +152,9 @@ namespace dspatch_gui
 
         private void addROMButton_Click(object sender, RoutedEventArgs e)
         {
-            if (romListBox.Items.Count >= 3)
+            if (romListBox.Items.Count >= 8)
             {
-                MessageBox.Show("You cannot add more than 3 ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("You cannot add more than 8 ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
