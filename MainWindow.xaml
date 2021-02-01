@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dspatch_gui"
         mc:Ignorable="d"
-        Title="DSPatch-GUI" Height="419.334" Width="782.333" Background="#FFF4F4F4">
-    <Grid Margin="0,0,2,0">
+        Title="DSPatch-GUI" Height="419.334" Width="791.474" Background="#FFF4F4F4" ResizeMode="NoResize">
+    <Grid Margin="0,0,2,-19">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="281*"/>
@@ -22,15 +22,15 @@
             </Menu>
         </ToolBar>
 
-        <TextBox x:Name="downloadStationTextBox" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"  Width="260" Margin="36,0,0,274" HorizontalAlignment="Left"/>
-        <Label x:Name="label" Content="DS Download Station Volume 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="176" Canvas.Left="42" RenderTransformOrigin="-0.875,2.962" Margin="70,57,0,0"/>
-        <Button x:Name="downloadStationROMOpen" Content="Open File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Click="downloadStationROMOpen_Click" Height="20" Canvas.Left="92" Canvas.Top="95" Margin="120,140,0,0"/>
+        <TextBox x:Name="downloadStationTextBox" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"  Width="260" Margin="38,0,0,274" HorizontalAlignment="Left"/>
+        <Label x:Name="label" Content="DS Download Station Volume 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="176" Canvas.Left="42" RenderTransformOrigin="-0.875,2.962" Margin="68,77,0,0"/>
+        <Button x:Name="downloadStationROMOpen" Content="Open File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Click="downloadStationROMOpen_Click" Height="20" Canvas.Left="92" Canvas.Top="95" Margin="120,135,0,0"/>
 
         <Label x:Name="verifiedROM" Content="" HorizontalAlignment="Center" Margin="138,129,118,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF2D9139" Height="26" Width="10"/>
 
-        <Label x:Name="label1" Content="Output File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="26" Width="68" Canvas.Left="96" Margin="124,0,0,138"/>
-        <TextBox x:Name="outputTextBox" TextWrapping="Wrap" VerticalAlignment="Top"  Height="18" MinWidth="261" Margin="35,270,0,0" HorizontalAlignment="Left"/>
-        <Button x:Name="saveButton" Content="Save File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="76" Click="saveButton_Click" Height="20" Canvas.Left="92" Canvas.Top="75" Margin="120,0,0,57"/>
+        <Label x:Name="label1" Content="Output File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="26" Width="68" Canvas.Left="96" Margin="128,0,0,149"/>
+        <TextBox x:Name="outputTextBox" TextWrapping="Wrap" VerticalAlignment="Top"  Height="18" MinWidth="261" Margin="37,260,0,0" HorizontalAlignment="Left"/>
+        <Button x:Name="saveButton" Content="Save File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="76" Click="saveButton_Click" Height="20" Canvas.Left="92" Canvas.Top="75" Margin="128,0,0,87"/>
 
         <ListBox x:Name="romListBox" HorizontalAlignment="Center" MinHeight="167" VerticalAlignment="Center" MinWidth="150" BorderThickness="2"  Margin="570,83,52,138" />
         <Label x:Name="label3" Content="ROMs to be Added" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="26" MinWidth="142" HorizontalContentAlignment="Center" Margin="574,39,56,323"/>
