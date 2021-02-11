@@ -14,10 +14,8 @@ namespace dspatch
         public static String title = "HaxxStation";
         public static String subTitle1 = "By Gericom, shutterbug2000";
         public static String subTitle2 = "and Apache Thunder";
-        public static String cat = "HaxxStation by Gericom,";
-        public static String cat1 = "shutterbug2000, Apache Thunder";
-        public String cat0 = cat;
-        public String cat01 = cat1;
+        public static String top = "HaxxStation by Gericom,";
+        public static String top1 = "shutterbug2000, Apache Thunder";
         private static byte[] haxxStationIconImage =
         {
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -229,8 +227,8 @@ namespace dspatch
             {
                 rating = 1,
                 guideMode = 0x15,
-                touchText1 = cat0,
-                touchText2 = cat01,
+                touchText1 = top,
+                touchText2 = top1,
                 internalName = fileName
             };
             if (rom.Banner != null)
@@ -273,8 +271,8 @@ namespace dspatch
                     bannerText2 = "",
                     rating = 1,
                     guideMode = 0x15,
-                    touchText1 = cat0,
-                    touchText2 = cat01,
+                    touchText1 = top,
+                    touchText2 = top1,
                     internalName = fileName
                 });
             }
@@ -282,35 +280,35 @@ namespace dspatch
             mDownloadStation.FromFileSystem(mFileSystem);
             return mDownloadStation;
         }
-        public static void HaxxStationServerName(Byte[] name)
+        public static void HaxxStationServerName(Byte[] _name)
         {
-            haxxStationServer = name;
+            haxxStationServer = _name;
         }
-        public static void HaxxStationServerName(String name)
+        public static void HaxxStationServerName(String _name)
         {
-            byte[] nameByte = Encoding.ASCII.GetBytes(name);
+            byte[] nameByte = Encoding.ASCII.GetBytes(_name);
             haxxStationServer = nameByte;
         }
-        public static void HaxxStationBanner(String _var1, String _var2, String _var3)
+        public static void HaxxStationBanner(String _title, String _subTitle1, String _subTitle2)
         {
-            title = _var1;
-            subTitle1 = _var2;
-            subTitle2 = _var3;
+            title = _title;
+            subTitle1 = _subTitle1;
+            subTitle2 = _subTitle2;
         }
-        public static void HaxxStationTop(String _var1, String _var2)
+        public static void HaxxStationTop(String _top, String _top1)
         {
-            cat = _var1;
-            cat1 = _var2;
+            top = _top;
+            top1 = _top1;
         }
-        public static void HaxxStationBannerColor(String color)
+        public static void HaxxStationBannerColor(String _color)
         {
-            byte[] colorByte = Encoding.ASCII.GetBytes(color);
+            byte[] colorByte = Encoding.ASCII.GetBytes(_color);
             haxxStationIconPltt = colorByte;
         }
 
-        public static void HaxxStationBannerColor(Byte[] color)
+        public static void HaxxStationBannerColor(Byte[] _color)
         {
-            haxxStationIconPltt = color;
+            haxxStationIconPltt = _color;
         }
     }
 

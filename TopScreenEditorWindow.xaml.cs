@@ -33,7 +33,7 @@ namespace dspatch_gui
         private void HaxxStationTopSave_click(object sender, RoutedEventArgs e)
         {
             DownloadStationPatcher.HaxxStationTop(haxxStationTextBox.Text, haxxStationTextBox2.Text);
-            if (!DownloadStationPatcher.cat.Equals("HaxxStation by Gericom,") || !DownloadStationPatcher.cat1.Equals("shutterbug2000, Apache Thunder"))
+            if (!DownloadStationPatcher.top.Equals("HaxxStation by Gericom,") || !DownloadStationPatcher.top1.Equals("shutterbug2000, Apache Thunder"))
             {
                 MessageBox.Show("You have successfully changed the Top Screen!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
