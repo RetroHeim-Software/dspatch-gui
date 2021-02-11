@@ -16,11 +16,11 @@ using dspatch;
 namespace dspatch_gui
 {
     /// <summary>
-    /// Interaction logic for Window3.xaml
+    /// Interaction logic for BannerEditorWindow.xaml
     /// </summary>
-    public partial class Window3 : Window
+    public partial class BannerEditorWindow : Window
     {
-        public Window3()
+        public BannerEditorWindow()
         {
            
            InitializeComponent();

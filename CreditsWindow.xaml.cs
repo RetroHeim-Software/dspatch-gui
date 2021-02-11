@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace dspatch_gui
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for CreditsWindow.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class CreditsWindow : Window
     {
-        public Window1()
+        public CreditsWindow()
         {
             InitializeComponent();
         }

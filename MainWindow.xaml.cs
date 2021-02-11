@@ -90,24 +90,24 @@ namespace dspatch_gui
 
         private void bar_Credits_Click(object sender, RoutedEventArgs e)
         {
-            Window1 credits = new Window1();
+            CreditsWindow credits = new CreditsWindow();
             credits.Show();
         }
         private void bar_HaxxStation_Click(object sender, RoutedEventArgs e)
         {
-            Window2 name = new Window2();
+            NameEditorWindow name = new NameEditorWindow();
             name.Show();
         }
 
         private void bar_HaxxStationBanner_Click(object sneder, RoutedEventArgs e)
         {
-            Window3 banner = new Window3();
+            BannerEditorWindow banner = new BannerEditorWindow();
             banner.Show();
         }
 
         private void bar_HaxxStationTopScreen_Click(object sneder, RoutedEventArgs e)
         {
-            Window4 top = new Window4();
+            TopScreenEditorWindow top = new TopScreenEditorWindow();
             top.Show();
         }
 
