@@ -258,6 +258,8 @@ namespace dspatch
 
         }
 
+
+        // Turns a rom into a menu entry, will be hijacked at some point to allow setting custom names and icons.
         public NDS ProduceRom()
         {
             string fileName = "rom" + (mDemoMenu.entries.Count - 1).ToString("0000") + "d";
@@ -280,35 +282,49 @@ namespace dspatch
             mDownloadStation.FromFileSystem(mFileSystem);
             return mDownloadStation;
         }
+
+
+        // This is used to make sure that it is accurate, should be changed. Very terrible code, very messy.
         public static void HaxxStationServerName(Byte[] _name)
         {
             haxxStationServer = _name;
         }
+
+        // Receives the name in ASCII and converts it into bytes which then sets it.
         public static void HaxxStationServerName(String _name)
         {
             byte[] nameByte = Encoding.ASCII.GetBytes(_name);
             haxxStationServer = nameByte;
         }
+
+        // Receives the banner modification that the user placed, and then sets it.
+        // Please keep it within the same amount of characters there.
         public static void HaxxStationBanner(String _title, String _subTitle1, String _subTitle2)
         {
             title = _title;
             subTitle1 = _subTitle1;
             subTitle2 = _subTitle2;
         }
+        
+        // Receives the 2 strings that the user described for the HaxxStation and sets it.
         public static void HaxxStationTop(String _top, String _top1)
         {
             top = _top;
             top1 = _top1;
         }
-        public static void HaxxStationBannerColor(String _color)
+
+        // Converts string received into a byte array, which then sets it as the palette.
+        public static void HaxxStationIconPltt(String _pltt)
         {
-            byte[] colorByte = Encoding.ASCII.GetBytes(_color);
-            haxxStationIconPltt = colorByte;
+            byte[] plttByte = Encoding.ASCII.GetBytes(_pltt);
+            haxxStationIconPltt = plttByte;
         }
 
-        public static void HaxxStationBannerColor(Byte[] _color)
+        // Converts string received into a byte array, which then sets it as the icon.
+        public static void HaxxStationIcon(String _icon)
         {
-            haxxStationIconPltt = _color;
+            byte[] iconByte = Encoding.ASCII.GetBytes(_icon);
+            haxxStationIconImage = iconByte;
         }
     }
 

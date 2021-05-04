@@ -122,6 +122,7 @@ namespace dspatch_gui
 
             // Green: #FF33B439
             // Red: #FFAE0000
+            // Checks if the correct ROM was inputted.
             if (checkHash(open.FileName) == false && downloadStationTextBox.Text != "")
             {
                 verifiedROM.Foreground = new SolidColorBrush(Color.FromRgb(0xB3, 0x00, 0x00));
@@ -134,11 +135,14 @@ namespace dspatch_gui
             }
         }
 
+
+        // Quits.
         private void bar_Quit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        // Saves rom files.
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
@@ -152,12 +156,14 @@ namespace dspatch_gui
 
         private void addROMButton_Click(object sender, RoutedEventArgs e)
         {
+            // Checks if an ok amount of roms was used. Could potentially make it more efficient and increase the total capacity.
             if (romListBox.Items.Count >= 8)
             {
                 MessageBox.Show("You cannot add more than 8 ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
+                // Opens a window to select a rom or multiple.
                 OpenFileDialog open = new OpenFileDialog();
                 open.Filter = "All Usable Files (*.nds;*.srl)|*.nds;*.srl";
                 if (open.ShowDialog() == true)
@@ -167,6 +173,7 @@ namespace dspatch_gui
             }
         }
 
+        // Creates the new download station ROM.
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
             if (createROM() == true)

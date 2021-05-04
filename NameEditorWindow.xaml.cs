@@ -39,6 +39,7 @@ namespace dspatch_gui
             else
             {
                 DownloadStationPatcher.HaxxStationServerName(haxxStationTextBox.Text);
+
                 if (Encoding.ASCII.GetString(DownloadStationPatcher.haxxStationServer, 0, DownloadStationPatcher.haxxStationServer.Length).Equals(haxxStationTextBox.Text))
                 {
                     MessageBox.Show("You have successfully changed the internal name!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -32,6 +32,8 @@ namespace dspatch_gui
         }
         private void HaxxStationTopSave_click(object sender, RoutedEventArgs e)
         {
+            // This is for checking if the change went through to the main code.
+            //Terribly coded, but still functions. Might be leading to some part being inefficient.
             DownloadStationPatcher.HaxxStationTop(haxxStationTextBox.Text, haxxStationTextBox2.Text);
             if (!DownloadStationPatcher.top.Equals("HaxxStation by Gericom,") || !DownloadStationPatcher.top1.Equals("shutterbug2000, Apache Thunder"))
             {
