@@ -32,7 +32,7 @@ namespace dspatch_gui
         }
         private void HaxxStationBannerSave_click(object sender, RoutedEventArgs e)
         {
-            DownloadStationPatcher.HaxxStationBanner(haxxStationTextBox.Text, haxxStationTextBox2.Text, haxxStationTextBox3.Text);
+            DownloadStationPatcher.HaxxStationBanner(nameTextBox.Text, secondRowTextBox.Text, thirdRowTextBox.Text);
 
             //Checks if characters were changed, far from fool-proof and would need to be made better. But it works for now.
             if (!DownloadStationPatcher.title.Equals("HaxxStation") || !DownloadStationPatcher.subTitle1.Equals("By Gericom, shutterbug2000") || !DownloadStationPatcher.subTitle2.Equals("and Apache Thunder"))

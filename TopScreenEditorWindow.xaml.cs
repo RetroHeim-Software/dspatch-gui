@@ -34,7 +34,7 @@ namespace dspatch_gui
         {
             // This is for checking if the change went through to the main code.
             //Terribly coded, but still functions. Might be leading to some part being inefficient.
-            DownloadStationPatcher.HaxxStationTop(haxxStationTextBox.Text, haxxStationTextBox2.Text);
+            DownloadStationPatcher.HaxxStationTop(topRowTextBox.Text, secondRowTextBox.Text);
             if (!DownloadStationPatcher.top.Equals("HaxxStation by Gericom,") || !DownloadStationPatcher.top1.Equals("shutterbug2000, Apache Thunder"))
             {
                 MessageBox.Show("You have successfully changed the Top Screen!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

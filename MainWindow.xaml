@@ -5,37 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dspatch_gui"
         mc:Ignorable="d"
-        Title="DSPatch-GUI" Height="419.334" Width="791.474" Background="#FFF4F4F4" ResizeMode="NoResize">
-    <Grid Margin="0,0,2,-19">
+        Title="DSPatch-GUI" Height="433.334" Width="806.474" Background="#FFF4F4F4" ResizeMode="NoResize">
+    <Grid x:Name="Main_Window" Margin="0,0,2,-19">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="89*"/>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="81*"/>
+        </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="281*"/>
+            <ColumnDefinition Width="311*"/>
+            <ColumnDefinition Width="257*"/>
+            <ColumnDefinition Width="213*"/>
 
         </Grid.ColumnDefinitions>
-        <ToolBar VerticalAlignment="Top" Grid.ColumnSpan="4" Height="28">
+        <ToolBar VerticalAlignment="Top" Grid.ColumnSpan="3" Height="28">
             <Menu>
-                <MenuItem x:Name="haxxStationName" Header="Name" Click="bar_HaxxStation_Click" Background="#FFF0F0F0" Margin="0"/>
-                <MenuItem x:Name="haxxStationBanner" Header="Banner" Click="bar_HaxxStationBanner_Click" Background="#FFF0F0F0" Margin="0"/>
-                <MenuItem x:Name="haxxStationTopScreen" Header="Top" Click="bar_HaxxStationTopScreen_Click" Background="#FFF0F0F0" Margin="0"/>
+                <MenuItem x:Name="bar_StationNameChanger" Header="Name" Click="bar_HaxxStation_Click" Background="#FFF0F0F0" Margin="0"/>
+                <MenuItem x:Name="bar_StationBannerChanger" Header="Banner" Click="bar_HaxxStationBanner_Click" Background="#FFF0F0F0" Margin="0"/>
+                <MenuItem x:Name="bar_StationTopScreenChanger" Header="Top" Click="bar_HaxxStationTopScreen_Click" Background="#FFF0F0F0" Margin="0"/>
                 <MenuItem x:Name="bar_Credits" Header="Credits" Click="bar_Credits_Click" Background="#FFF0F0F0"></MenuItem>
                 <MenuItem x:Name="bar_Quit" Header="Quit" Click="bar_Quit_Click" Margin="0" RenderTransformOrigin="1.484,0.726"/>
             </Menu>
         </ToolBar>
 
-        <TextBox x:Name="downloadStationTextBox" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18"  Width="260" Margin="38,0,0,274" HorizontalAlignment="Left"/>
-        <Label x:Name="label" Content="DS Download Station Volume 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="176" Canvas.Left="42" RenderTransformOrigin="-0.875,2.962" Margin="68,77,0,0"/>
-        <Button x:Name="downloadStationROMOpen" Content="Open File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Click="downloadStationROMOpen_Click" Height="20" Canvas.Left="92" Canvas.Top="95" Margin="120,135,0,0"/>
+        <TextBox x:Name="inputTextBox" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="18" Margin="37,0,0,30" HorizontalAlignment="Left" Width="251" Grid.Row="1"/>
+        <Label x:Name="TitleLabel" Content="HaxxStation Creator GUI" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.875,2.962" Margin="20,28,0,0" Height="26" Width="175" Grid.Column="1"/>
+        <Button x:Name="openFileButton" Content="Open File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Click="downloadStationROMOpen_Click" Height="20" Margin="113,22,0,0" Grid.Row="2"/>
 
-        <Label x:Name="verifiedROM" Content="" HorizontalAlignment="Center" Margin="138,129,118,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF2D9139" Height="26" Width="10"/>
+        <Label x:Name="verifiedROM" Content="" HorizontalAlignment="Center" Margin="35,40,212,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#FF2D9139" Height="26" Width="10" Grid.Column="1" Grid.Row="1"/>
 
-        <Label x:Name="label1" Content="Output File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="26" Width="68" Canvas.Left="96" Margin="128,0,0,149"/>
-        <TextBox x:Name="outputTextBox" TextWrapping="Wrap" VerticalAlignment="Top"  Height="18" MinWidth="261" Margin="37,260,0,0" HorizontalAlignment="Left"/>
-        <Button x:Name="saveButton" Content="Save File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="76" Click="saveButton_Click" Height="20" Canvas.Left="92" Canvas.Top="75" Margin="128,0,0,87"/>
+        <Label x:Name="outputLabel" Content="Output File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="26" Width="68" Margin="120,0,0,12" Grid.Row="3"/>
+        <TextBox x:Name="outputTextBox" TextWrapping="Wrap" VerticalAlignment="Top"  Height="18" MinWidth="261" Margin="37,20,0,0" HorizontalAlignment="Left" Width="261" Grid.Row="4"/>
+        <Button x:Name="saveFileButton" Content="Save File" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="76" Click="saveButton_Click" Height="20" Margin="120,0,0,41" Grid.Row="5"/>
 
-        <ListBox x:Name="romListBox" HorizontalAlignment="Center" MinHeight="167" VerticalAlignment="Center" MinWidth="150" BorderThickness="2"  Margin="570,83,52,138" />
-        <Label x:Name="label3" Content="ROMs to be Added" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="26" MinWidth="142" HorizontalContentAlignment="Center" Margin="574,39,56,323"/>
-        <Button x:Name="addROMButton" Content="Add ROM" HorizontalAlignment="Center" Width="86" Click="addROMButton_Click" Height="22" FontSize="11"  Margin="602,284,84,82" VerticalAlignment="Center"/>
+        <ListBox x:Name="romListBox" HorizontalAlignment="Center" MinHeight="167" VerticalAlignment="Center" MinWidth="150" BorderThickness="2"  Margin="27,10,36,2" Grid.Column="2" Height="168" Width="150" Grid.Row="1" Grid.RowSpan="3" />
+        <Label x:Name="romListLabel" Content="ROM List" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="26" MinWidth="142" HorizontalContentAlignment="Center" Margin="35,36,36,27" Grid.Column="2" Height="26" Width="142"/>
+        <Button x:Name="addROMButton" Content="Add ROM" HorizontalAlignment="Center" Width="86" Click="addROMButton_Click" Height="22" FontSize="11"  Margin="66,35,61,0" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4"/>
 
-        <Button x:Name="createButton" Content="Create ROM" HorizontalAlignment="Center" Margin="346,0,340,42" Grid.Row="1" VerticalAlignment="Bottom" Width="86" Click="createButton_Click" Height="20"/>
+        <Button x:Name="createROMButton" Content="Create ROM" HorizontalAlignment="Center" Margin="35,0,136,36" VerticalAlignment="Bottom" Width="86" Click="createButton_Click" Height="20" Grid.Column="1" Grid.Row="5"/>
+        <Label x:Name="inputFileLabel" Content="Input File" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.875,2.962" Margin="120,53,0,0" Height="26" Width="83"/>
     </Grid>
 </Window>

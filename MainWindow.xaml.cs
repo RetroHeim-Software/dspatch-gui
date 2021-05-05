@@ -58,7 +58,7 @@ namespace dspatch_gui
         private Boolean createROM()
         {
             // Make sure everything is filled out properly
-            if (checkHash(downloadStationTextBox.Text) == false)
+            if (checkHash(inputTextBox.Text) == false)
             {
                 MessageBox.Show("You aren't using the correct DS Download Station ROM!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -78,7 +78,7 @@ namespace dspatch_gui
                 MessageBox.Show("You added too many ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            byte[] dsdata = File.ReadAllBytes(downloadStationTextBox.Text);
+            byte[] dsdata = File.ReadAllBytes(inputTextBox.Text);
             DownloadStationPatcher p = new DownloadStationPatcher(new NDS(dsdata));
             foreach(var r in romListBox.Items)
                 p.AddRom(new NDS(File.ReadAllBytes(r.ToString())));
@@ -117,13 +117,13 @@ namespace dspatch_gui
             open.Filter = "All Usable Files (*.nds;*.srl)|*.nds;*.srl|All Files (*.*)|*.*";
             if (open.ShowDialog() == true)
             {
-                downloadStationTextBox.Text = open.FileName;
+                inputTextBox.Text = open.FileName;
             }
 
             // Green: #FF33B439
             // Red: #FFAE0000
             // Checks if the correct ROM was inputted.
-            if (checkHash(open.FileName) == false && downloadStationTextBox.Text != "")
+            if (checkHash(open.FileName) == false && inputTextBox.Text != "")
             {
                 verifiedROM.Foreground = new SolidColorBrush(Color.FromRgb(0xB3, 0x00, 0x00));
                 verifiedROM.Content = "Bad ROM!";
