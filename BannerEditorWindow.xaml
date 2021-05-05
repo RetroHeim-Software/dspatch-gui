@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dspatch_gui"
         mc:Ignorable="d"
-        Title="HaxxStation Internal Banner Editor" Height="200" Width="360" Background="#FFF4F4F4" ResizeMode="NoResize">
+        Title="Internal Banner Editor" Height="200" Width="360" Background="#FFF4F4F4" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="65*"/>
@@ -15,9 +15,9 @@
             <Button x:Name="closeButton" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Height="20" Click="button_Click" Canvas.Left="107" Canvas.Top="131"/>
             <Canvas Height="120" Width="298">
                 <TextBox x:Name="nameTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="HaxxStation" Canvas.Top="10" Width="119" MaxLength="12" Canvas.Left="84"/>
-                <Button x:Name="saveButton" Content="Save Banner" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76" Click="HaxxStationBannerSave_click" Height="20" Canvas.Left="106" Canvas.Top="100"/>
-                <TextBox x:Name="secondRowTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="By Gericom, shutterbug2000" Canvas.Left="60" Canvas.Top="43" Width="167" MaxLength="26"/>
-                <TextBox x:Name="thirdRowTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="and Apache Thunder" Canvas.Left="84" Canvas.Top="76" Width="119" MaxLength="18"/>
+                <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Click="HaxxStationBannerSave_click" Height="20" Canvas.Left="107" Canvas.Top="100"/>
+                <TextBox x:Name="secondRowTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="By Gericom, shutterbug2000" Canvas.Left="60" Canvas.Top="40" Width="167" MaxLength="26"/>
+                <TextBox x:Name="thirdRowTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.197" Text="and Apache Thunder" Canvas.Left="84" Canvas.Top="70" Width="119" MaxLength="18"/>
             </Canvas>
         </Canvas>
     </Grid>
