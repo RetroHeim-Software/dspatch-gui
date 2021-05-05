@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dspatch_gui"
         mc:Ignorable="d"
-        Title="HaxxStation Download Station Top Screen Editor" Height="200" Width="360" Background="#FFF4F4F4" ResizeMode="NoResize">
+        Title="Top Screen Editor" Height="200" Width="360" Background="#FFF4F4F4" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="65*"/>
@@ -14,9 +14,8 @@
         </Grid.ColumnDefinitions>
         <Canvas Grid.ColumnSpan="3" Margin="33,6,23,10">
             <Canvas Height="130" Width="298">
-                <Label x:Name="titleLabel" Content="HaxxStation Top Screen" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="138" RenderTransformOrigin="0.481,2.88" Canvas.Left="78" Canvas.Top="-1"/>
-                <TextBox x:Name="topRowTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="HaxxStation by Gericom," Canvas.Top="38" Width="192" MaxLength="23" Canvas.Left="51"/>
-                <TextBox x:Name="secondRowTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="shutterbug2000, Apache Thunder" Canvas.Left="51" Canvas.Top="77" Width="192" MaxLength="30"/>
+                <TextBox x:Name="topRowTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="HaxxStation by Gericom," Canvas.Top="10" Width="192" MaxLength="23" Canvas.Left="51"/>
+                <TextBox x:Name="secondRowTextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" RenderTransformOrigin="0.505,2.0" Text="shutterbug2000, Apache Thunder" Canvas.Left="51" Canvas.Top="57" Width="192" MaxLength="30"/>
                 <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Click="HaxxStationTopSave_click" Height="20" Canvas.Left="112" Canvas.Top="110"/>
             </Canvas>
             <Button x:Name="closeButton" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Top" Width="74" Height="20" Click="button_Click" Canvas.Left="112" Canvas.Top="135"/>
