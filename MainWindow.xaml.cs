@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.Security.Cryptography;
 using System.IO;
@@ -73,7 +62,7 @@ namespace dspatch_gui
                 MessageBox.Show("You did not add any ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (romListBox.Items.Count > 8)
+            if (romListBox.Items.Count > 10)
             {
                 MessageBox.Show("You added too many ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -157,9 +146,9 @@ namespace dspatch_gui
         private void addROMButton_Click(object sender, RoutedEventArgs e)
         {
             // Checks if an ok amount of roms was used. Could potentially make it more efficient and increase the total capacity.
-            if (romListBox.Items.Count >= 8)
+            if (romListBox.Items.Count >= 10)
             {
-                MessageBox.Show("You cannot add more than 8 ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("You cannot add more than 10 ROMs to include in the patched DS Download Station!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {

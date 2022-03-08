@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using dspatch;
 
 namespace dspatch_gui
@@ -32,23 +21,32 @@ namespace dspatch_gui
         }
         private void haxxStationhaxxStationNameSave_click(object sender, RoutedEventArgs e)
         {
-            if (internalNameTextBox.Equals("RC1 2006 01 25                  Gericom   HaxxStation                                                                                     By Gericom, shutterbug2000                                                                      and Apache Thunder          .                                                                   "))
-            {
-                DownloadStationPatcher.HaxxStationServerName(DownloadStationPatcher.haxxStationServer);
-            }
-            else
-            {
-                DownloadStationPatcher.HaxxStationServerName(internalNameTextBox.Text);
+            string changedInternalName = internalNameTextBox.Text;
+            bool isValid = true;
+            isValid = validateName(Encoding.ASCII.GetString(DownloadStationPatcher.haxxStationServer, 0, DownloadStationPatcher.haxxStationServer.Length), changedInternalName, 0, isValid);
 
+            if (isValid)
+            {
+                DownloadStationPatcher.HaxxStationServerName(changedInternalName);
                 if (Encoding.ASCII.GetString(DownloadStationPatcher.haxxStationServer, 0, DownloadStationPatcher.haxxStationServer.Length).Equals(internalNameTextBox.Text))
                 {
                     MessageBox.Show("You have successfully changed the internal name!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Something went wrong with changing the internal name!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Something went wrong with changing the Internal Name! Since this is not supposed to happen, please report this issue on github!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+        private bool validateName(string def, string changed, short count, bool _isValid)
+        {
+            Validator validate = new Validator();
+            bool isValid = validate.validateChanges(def, changed, count, _isValid);
+            if (!isValid)
+            {
+                MessageBox.Show("textbox " + ++count + " is too small. Must match original length. Just try typing!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return isValid;
         }
     }
 }
